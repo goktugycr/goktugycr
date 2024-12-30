@@ -1,4 +1,4 @@
-[![MasterHead](https://trthaberstatic.cdn.wp.trt.com.tr/resimler/1560000/goktug-projesi-1560939.jpg)
+![MasterHead](https://trthaberstatic.cdn.wp.trt.com.tr/resimler/1560000/goktug-projesi-1560939.jpg)
 
 <h1 align="center">Merhaba ben Göktuğ Yüceer</h1>
 <h3 align="center">Sakarya Üniversitesi Bilgisayar Mühendisliği Öğrencisi</h3>
