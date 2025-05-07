@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>İyi ki Doğdun!</title>
+  <style>
+    * { box-sizing: border-box; }
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: linear-gradient(to right, #e0f3ff, #ffd1dc);
+      text-align: center;
+      padding: 20px;
+      color: #333;
+      margin: 0;
+    }
+    h1 {
+      font-size: 2.5em;
+      color: #d81b60;
+      margin-bottom: 10px;
+    }
+    p { font-size: 1.2em; }
+    .cake {
+      font-size: 80px;
+      animation: float 2s ease-in-out infinite;
+    }
+    @keyframes float {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-20px); }
+    }
+    button {
+      margin-top: 30px;
+      padding: 15px 30px;
+      font-size: 1em;
+      background-color: #ff4081;
+      color: white;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+    }
+    button:hover { background-color: #e91e63; }
+    #slideshow {
+      margin-top: 40px;
+      display: none;
+    }
+    #slideshow img {
+      width: 100%;
+      max-width: 400px;
+      height: auto;
+      border-radius: 15px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+    }
+    @media (max-width: 768px) {
+      h1 { font-size: 2em; }
+      .cake { font-size: 60px; }
+      button {
+        font-size: 0.95em;
+        padding: 12px 20px;
+      }
+      #slideshow img {
+        max-width: 90%;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="cake">🎂</div>
+  <h1>İyi ki Doğdun, Alp Erdem GÜL!</h1>
+  <p>Senin için özel hazırladığım bir sürpriz var 🎉</p>
+
+  <button onclick="startSlideshow()">Sürprizi Göster</button>
+
+  <div id="slideshow">
+    <img id="slideImage" src="images/1.jpg" alt="Slayt Foto">
+  </div>
+
+  <!-- Müzik etiketi (başta çalmaz, JavaScript ile tetiklenecek) -->
+  <audio id="music" loop>
+    <source src="music/Bak.mp3" type="audio/mpeg">
+    Tarayıcınız müziği desteklemiyor.
+  </audio>
+
+  <script>
+    const images = [
+      "images/1.jpg",
+      "images/2.jpg",
+      "images/3.jpg",
+      "images/4.jpg",
+      "images/5.jpg",
+      "images/6.jpg",
+      "images/7.jpg"
+    ];
+
+    let currentIndex = 0;
+    let interval;
+
+    function startSlideshow() {
+      // Müzik başlat
+      const music = document.getElementById("music");
+      music.play();
+
+      // Slaytı başlat
+      document.getElementById("slideshow").style.display = "block";
+      showImage();
+      interval = setInterval(nextImage, 4000);
+    }
+
+    function showImage() {
+      const img = document.getElementById("slideImage");
+      img.src = images[currentIndex];
+    }
+
+    function nextImage() {
+      currentIndex = (currentIndex + 1) % images.length;
+      showImage();
+    }
+  </script>
+
+</body>
+</html>
